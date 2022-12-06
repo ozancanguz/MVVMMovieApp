@@ -11,12 +11,15 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ozancanguz.movieapplication.Adapter.MovieAdapter
 import com.ozancanguz.movieapplication.R
+import com.ozancanguz.movieapplication.models.Movie
 import com.ozancanguz.movieapplication.viewmodels.MovieViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_movie_list.view.*
+import kotlinx.android.synthetic.main.movies_row_layout.view.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 
 
