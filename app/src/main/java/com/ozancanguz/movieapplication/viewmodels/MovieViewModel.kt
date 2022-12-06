@@ -12,12 +12,13 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 @HiltViewModel
-class MovieViewModel(private val repository: Repository,application: Application):AndroidViewModel(application) {
+class MovieViewModel @Inject constructor(private val repository: Repository,application: Application):AndroidViewModel(application) {
 
 
-    private val movieList=MutableLiveData<List<Movie>>()
+    val movieList=MutableLiveData<List<Movie>>()
 
    var job: Job?=null
 
