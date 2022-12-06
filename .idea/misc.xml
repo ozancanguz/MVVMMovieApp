@@ -4,10 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/RealAndroiApps/MovieApplication/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/RealAndroiApps/MovieApplication/app/src/main/res/layout/activity_splash.xml" value="0.16847826086956522" />
         <entry key="..\:/RealAndroiApps/MovieApplication/app/src/main/res/layout/fragment_details.xml" value="0.1" />
+        <entry key="..\:/RealAndroiApps/MovieApplication/app/src/main/res/layout/fragment_movie_details.xml" value="0.16847826086956522" />
         <entry key="..\:/RealAndroiApps/MovieApplication/app/src/main/res/layout/fragment_movie_list.xml" value="0.20416666666666666" />
         <entry key="..\:/RealAndroiApps/MovieApplication/app/src/main/res/layout/movies_row_layout.xml" value="0.20416666666666666" />
         <entry key="..\:/RealAndroiApps/MovieApplication/app/src/main/res/layout/row_layout.xml" value="0.20416666666666666" />
+        <entry key="..\:/RealAndroiApps/MovieApplication/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.132" />
       </map>
     </option>
   </component>
