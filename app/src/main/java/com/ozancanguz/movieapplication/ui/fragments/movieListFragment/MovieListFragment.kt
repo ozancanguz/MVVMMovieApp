@@ -11,9 +11,12 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.ozancanguz.movieapplication.Adapter.MovieAdapter
 import com.ozancanguz.movieapplication.R
 import com.ozancanguz.movieapplication.viewmodels.MovieViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.android.synthetic.main.fragment_movie_list.view.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 
 
@@ -24,6 +27,8 @@ class MovieListFragment : Fragment() {
 
 
     private lateinit var viewModel:MovieViewModel
+    private var movieAdapter=MovieAdapter()
+
 
 
 
@@ -38,6 +43,11 @@ class MovieListFragment : Fragment() {
         viewModel=ViewModelProvider(this).get(MovieViewModel::class.java)
         observeLiveData()
 
+        // init rv
+        view.recyclerView.layoutManager=LinearLayoutManager(requireContext())
+        view.recyclerView.adapter=movieAdapter
+
+
 
         return view
     }
@@ -46,8 +56,8 @@ class MovieListFragment : Fragment() {
     private fun observeLiveData() {
 
         viewModel.requestApiData()
-        viewModel.movieList.observe(viewLifecycleOwner, Observer {
-            Log.d("data"," " +it)
+        viewModel.movieList.observe(viewLifecycleOwner, Observer { newData ->
+            movieAdapter.updateData(newData)
         })
     }
 
