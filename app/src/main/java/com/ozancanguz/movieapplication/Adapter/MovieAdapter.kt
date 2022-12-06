@@ -3,9 +3,7 @@ package com.ozancanguz.movieapplication.Adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.ozancanguz.movieapplication.R
 import com.ozancanguz.movieapplication.models.Movie
 import com.ozancanguz.movieapplication.util.loadImage
@@ -39,11 +37,11 @@ class MovieAdapter:RecyclerView.Adapter<MovieAdapter.MyViewHolder>() {
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
 
         var currentMovie=movieList[position]
-        holder.itemView.moviename_tv.text=currentMovie.name
-        holder.itemView.desc_textview.text=currentMovie.desc
+        holder.itemView.movies_name.text=currentMovie.name
+        holder.itemView.movies_desc.text=currentMovie.desc
 
         //glide ile sonradan ekledik
-        holder.itemView.movie_imageview.loadImage(currentMovie.imageUrl)
+        holder.itemView.movies_img.loadImage(currentMovie.imageUrl)
 
 
     }
