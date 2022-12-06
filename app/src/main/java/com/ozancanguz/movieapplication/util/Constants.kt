@@ -15,14 +15,16 @@ class Constants {
         const val BASE_URL="https://www.howtodoandroid.com/"
 
     }
-    fun ImageView.downloadFromUrl(url: String?){
 
+    }
+    fun ImageView.loadImage(uri:String?){
+        val options=RequestOptions()
 
+            .error(R.mipmap.ic_launcher)
         Glide.with(context)
-            .load(url)
+            .setDefaultRequestOptions(options)
+            .load(uri)
             .into(this)
 
     }
 
-
-}

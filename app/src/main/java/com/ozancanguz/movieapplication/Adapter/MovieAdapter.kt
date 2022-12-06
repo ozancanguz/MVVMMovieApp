@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.ozancanguz.movieapplication.R
 import com.ozancanguz.movieapplication.models.Movie
-import kotlinx.android.synthetic.main.row_layout.view.*
+import com.ozancanguz.movieapplication.util.loadImage
+import kotlinx.android.synthetic.main.movies_row_layout.view.*
+
 
 
 class MovieAdapter:RecyclerView.Adapter<MovieAdapter.MyViewHolder>() {
@@ -30,16 +32,18 @@ class MovieAdapter:RecyclerView.Adapter<MovieAdapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
        var inflater=LayoutInflater.from(parent.context)
-        val view=inflater.inflate(R.layout.row_layout,parent,false)
+        val view=inflater.inflate(R.layout.movies_row_layout,parent,false)
         return MyViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
 
         var currentMovie=movieList[position]
-        holder.itemView.moviename_textView.text=currentMovie.name
-        holder.itemView.desc_tv.text=currentMovie.desc
-        holder.itemView.category_tv.text=currentMovie.category
+        holder.itemView.moviename_tv.text=currentMovie.name
+        holder.itemView.desc_textview.text=currentMovie.desc
+
+        //glide ile sonradan ekledik
+        holder.itemView.movie_imageview.loadImage(currentMovie.imageUrl)
 
 
     }
