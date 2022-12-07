@@ -3,9 +3,11 @@ package com.ozancanguz.movieapplication.Adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.ozancanguz.movieapplication.R
 import com.ozancanguz.movieapplication.models.Movie
+import com.ozancanguz.movieapplication.ui.fragments.movieListFragment.MovieListFragmentDirections
 import com.ozancanguz.movieapplication.util.loadImage
 import kotlinx.android.synthetic.main.movies_row_layout.view.*
 
@@ -43,6 +45,10 @@ class MovieAdapter:RecyclerView.Adapter<MovieAdapter.MyViewHolder>() {
         //glide ile sonradan ekledik
         holder.itemView.movies_img.loadImage(currentMovie.imageUrl)
 
+        holder.itemView.setOnClickListener {
+            val directions=MovieListFragmentDirections.actionMovieListFragmentToMovieDetailsFragment(currentMovie)
+                holder.itemView.findNavController().navigate(directions)
+        }
 
     }
 

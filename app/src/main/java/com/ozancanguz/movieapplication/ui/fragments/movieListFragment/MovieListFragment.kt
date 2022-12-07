@@ -25,7 +25,7 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 
 @ExperimentalCoroutinesApi
 @AndroidEntryPoint
-class MovieListFragment : Fragment() {
+class MovieListFragment: Fragment() {
 
 
 

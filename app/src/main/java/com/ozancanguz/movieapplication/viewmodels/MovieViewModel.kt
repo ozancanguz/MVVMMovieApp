@@ -3,7 +3,9 @@ package com.ozancanguz.movieapplication.viewmodels
 import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
 import com.ozancanguz.movieapplication.data.repository.Repository
 import com.ozancanguz.movieapplication.models.Movie
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -18,6 +20,8 @@ import javax.inject.Inject
 class MovieViewModel @Inject constructor(private val repository: Repository,application: Application):AndroidViewModel(application) {
 
 
+
+    // For Retrofit
     val movieList=MutableLiveData<List<Movie>>()
 
    var job: Job?=null
